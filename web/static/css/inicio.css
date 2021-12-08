@@ -1,0 +1,106 @@
+body{
+    background-color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+html {
+    background-color: black;
+}
+
+nav {
+background-color: #fdcb32;
+}
+
+#container {
+    background-color: black;
+}
+
+header{
+    display:flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#showMovies{
+background-color: black;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.searchContainer{
+    display: flex;
+    width: 500px;
+    height: 50px;
+}
+
+#hola{
+right: 20px;
+position: fixed;
+}
+
+.dropdown-menu{
+right: 20px;
+position: fixed;
+}
+
+#dropdownMenuButton{
+right: 50%;
+position: relative;
+}
+
+.card{
+    display: flex;
+    width: 200px;
+    height: 450px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    background-color: black;
+    border: 2px solid #fdcb31;
+    border-radius: 30px;
+    padding: 20px;
+    margin: 30px;
+}
+.card img{
+    height: 200px;
+    width: 130px;
+    border-radius: 5px;
+}
+#txtSearch{
+    flex: 3;
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+#btnSearch{
+    flex: 1;
+    font-size: 1.2em;
+    background-color: brown;
+    color: white;
+}
+a {
+    border-radius: 5px;
+    font-weight: bold;
+    background-color: rgb(209, 5, 5);
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+
+#mainContent {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#formSearch {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}

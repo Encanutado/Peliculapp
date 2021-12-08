@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>Tu Perfil</title>
+    <link href="static/css/profile.css" rel="stylesheet" media="screen">
+    <script src="/static/js/init.js"></script>
+    <script src="/static/js/main2.js"></script>
+    <link href="static/css/inicio.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <script src="/static/js/profile.js"></script>
+    <style>
+
+  h1, th, td{
+color: white;
+  }
+
+  h1{
+  position: relative;
+  left: 5%;
+  }
+
+
+    html, #profile {
+      background:#475d62 url(/static/img/fondo.jpg);
+
+}
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    th {width: 20%}
+    h1#titulo{color: black;}
+
+    </style>
+</head>
+
+<body>
+<main>
+    <nav class="navbar navbar-dark justify-content-between">
+            <a href="inicio"><h1 id="titulo">Peliculapp</h1></a>
+             <div class="btn-group">
+                  <a type="button" class="btn btn-dark" id="usuarioLogeado" href="/profile">
+                      {{ data['NAME'] }}
+                  </a>
+                  <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="sr-only">Toggle Dropdown</span>
+                  </button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="/profile">Mi perfil</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="/logout">Cerrar sesión</a>
+                  </div>
+                </div>
+        </nav>
+    <div id="profile">
+        <div id="profilepic" class="row">
+            <h1 class="fadeIn first"> Mi Perfil:</h1>
+        </div>
+        <div id="output">
+            <table class="table table-hover">
+                <tbody>
+                <tr class="fadeIn first">
+                    <th scope="col">Nombre de Usuario:</th>
+                    <td scope="col"><p id="output0"> {{ data['NAME'] }} </p></td>
+                </tr>
+                <tr class="fadeIn first">
+                    <th scope="col">Nombre:</th>
+                    <td scope="col"><p id="output1">{{ data['REALNAME'] }}</p></td>
+                </tr>
+                <tr class="fadeIn second">
+                    <th scope="col">Apellidos:</th>
+                    <td scope="col"><p id="output2"> {{ data['LASTNAME'] }} </p></td>
+                </tr>
+                <tr class="fadeIn third">
+                    <th scope="col">Tu Email:</th>
+                    <td scope="col"><p id="output3"> {{ data['CORREO'] }} </p></td>
+                </tbody>
+            </table>
+        </div>
+        <button id="registerButton" data-toggle="modal" data-target="#exampleModal" class="fadeIn third">Editar
+            Perfil
+        </button>
+        <form action="delete" method="post">
+        <input type="submit" class="fadeIn Fourth" value="Eliminar mi perfil."></form>
+        <hr>
+        <a href="inicio">&#11178; Volver a la pagina principal.
+ </a>
+    </div>
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Editar Perfil</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="modify_user" method="POST">
+                    <div class="modal-body">
+
+                        <div class="col">
+                            <h4>Tu correo:</h4>
+                            <input type="text" name="editEmail" placeholder="Email" value="{{ data['CORREO'] }}">
+                            <h4>Tu nombre de Usuario:</h4>
+                            <input type="text" name="editUserName" placeholder="Nombre de usuario"
+                                   value="{{ data['NAME'] }}">
+                            <h4>Tu Nombre:</h4>
+                            <input type="text" name="editName" placeholder="Nombre" value="{{ data['REALNAME'] }}">
+                            <h4>Tu Apellido:</h4>
+                            <input type="text" name="editLastname" placeholder="Apellidos"
+                                   value="{{ data['LASTNAME'] }}">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                        <input type="submit" class="btn btn-primary" value="Guardar Cambios">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.bundle.min.js"></script>
+</main>
+</body>
+
+</html>
